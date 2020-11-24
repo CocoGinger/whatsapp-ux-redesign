@@ -55,7 +55,8 @@ class _ChatListState extends State<ChatList> {
                   },
                   onLongPress: () {
                     return Tooltip(
-                        message: "",
+                        message: "S",
+                        
                         child: Row(
                           children: [
                             IconButton(
@@ -77,8 +78,6 @@ class _ChatListState extends State<ChatList> {
                                 onPressed: null),
                           ],
                         ));
-                    print(
-                        "Show tool tip with delete, archive, block, mute or video call options");
                   },
                   child: chatCard(
                       context,

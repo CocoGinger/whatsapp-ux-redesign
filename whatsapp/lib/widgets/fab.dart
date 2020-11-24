@@ -21,10 +21,20 @@ Widget fab(int _page, BuildContext context) {
           ),
         )
       : _page == 3
-          ? FloatingActionButton(onPressed: (){}, child: Icon(Icons.call_outlined), )
-          :  FloatingActionButton(
+          ? FloatingActionButton(
               onPressed: () {},
-              child: Icon(Icons.message_outlined),
-              backgroundColor: Theme.of(context).accentColor,
-            );
+              child: Icon(Icons.call_outlined),
+            )
+          : _page == 1
+              ? FloatingActionButton(
+                
+                  onPressed: () {},
+                  child: Image.asset("assets/icons/group-chat.png",height: 30,width: 30,),
+                  backgroundColor: Theme.of(context).accentColor,
+                )
+              : FloatingActionButton(
+                  onPressed: () {},
+                  child: Image.asset("assets/icons/chat-icon.png", height: 30,width: 30,),
+                  backgroundColor: Theme.of(context).accentColor,
+                );
 }

@@ -156,6 +156,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.2.19-nullsafety.2"
+  timelines:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "76370bb2ce6e6abe16aa808a8972c10d7053b993"
+      url: "https://github.com/CocoGinger/timelines.git"
+    source: git
+    version: "0.0.2+1"
   typed_data:
     dependency: transitive
     description:
@@ -172,4 +181,4 @@ packages:
     version: "2.1.0-nullsafety.3"
 sdks:
   dart: ">=2.10.0 <2.11.0"
-  flutter: ">=0.2.5 <2.0.0"
+  flutter: ">=1.17.0 <2.0.0"

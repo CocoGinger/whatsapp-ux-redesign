@@ -21,8 +21,8 @@ Widget bottomNavBar(int _page, BuildContext context, navigationTapped) {
                 badgeContent: Text("9"),
                 badgeColor: Theme.of(context).accentColor,
                 child: Container(
-                    child: Image.network(
-                  "https://cdn.onlinewebfonts.com/svg/img_314410.png",
+                    child: Image.asset(
+                  "assets/icons/chat-icon.png",
                   height: 24,
                   width: 24,
                   color: _page == 0 ? Theme.of(context).accentColor : null,
@@ -33,8 +33,8 @@ Widget bottomNavBar(int _page, BuildContext context, navigationTapped) {
                 badgeContent: Text("2"),
                 badgeColor: Theme.of(context).accentColor,
                 child: Container(
-                    child: Image.network(
-                  "https://cdn.iconscout.com/icon/free/png-512/group-chat-2193254-1878104.png",
+                    child: Image.asset(
+                  "assets/icons/group-chat.png",
                   height: 24,
                   width: 24,
                   color: _page == 1 ? Theme.of(context).accentColor : null,

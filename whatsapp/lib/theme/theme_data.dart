@@ -10,6 +10,6 @@ ThemeData themeData() {
               fontWeight: FontWeight.bold,
               wordSpacing: 2.0),
           subtitle1: TextStyle(color: Colors.grey[800])),
-      iconTheme: IconThemeData(color: Colors.grey[800]),
+      iconTheme: IconThemeData(color: Colors.black),
       appBarTheme: AppBarTheme(color: Colors.grey[200], elevation: 0.0));
 }

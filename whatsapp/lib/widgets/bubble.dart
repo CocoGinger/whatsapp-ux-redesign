@@ -21,6 +21,8 @@ class BubbleNormal extends StatelessWidget {
   final bool sent;
   final bool delivered;
   final bool seen;
+  final int type;
+
 
   BubbleNormal({
     Key key,
@@ -30,6 +32,7 @@ class BubbleNormal extends StatelessWidget {
     this.color,
     this.tail = true,
     this.sent,
+    this.type,
     this.delivered,
     this.seen,
   }) : super(key: key);
@@ -46,20 +49,12 @@ class BubbleNormal extends StatelessWidget {
         size: 18,
         color: Color(0xFF97AD8E),
       );
-    } else if (delivered != null && delivered) {
+    } else if (delivered != null && delivered && !seen) {
       stateTick = true;
-      stateIcon = Icon(
-        Icons.done_all,
-        size: 18,
-        color: Color(0xFF97AD8E),
-      );
-    } else if (seen != null && seen) {
+      stateIcon = Icon(Icons.done_all, size: 18, color: Colors.grey[800]);
+    } else if (delivered && seen != null && seen) {
       stateTick = true;
-      stateIcon = Icon(
-        Icons.done_all,
-        size: 18,
-        color: Color(0xFF92DEDA),
-      );
+      stateIcon = Icon(Icons.done_all, size: 18, color: Colors.blueAccent);
     }
 
     return Row(
@@ -95,26 +90,36 @@ class BubbleNormal extends StatelessWidget {
                       : BUBBLE_RADIUS),
                 ),
               ),
-              child: Stack(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Padding(
                     padding: stateTick
-                        ? EdgeInsets.fromLTRB(12, 6, 28, 6)
+                        ? EdgeInsets.fromLTRB(12, 6, 6, 6)
                         : EdgeInsets.symmetric(vertical: 6, horizontal: 12),
                     child: Text(
                       text,
                       style: TextStyle(
-                        color: Colors.black87,
+                        color: isSender ? Colors.white : Colors.black87,
                         fontSize: 16,
                       ),
                       textAlign: TextAlign.left,
                     ),
                   ),
                   stateTick
-                      ? Positioned(
-                          bottom: 4,
-                          right: 6,
-                          child: stateIcon,
+                      ? Padding(
+                          padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+                          child: Container(
+                            alignment: Alignment.bottomRight,
+                            child: isSender
+                                ? stateIcon
+                                : Text(
+                                    "10 am",
+                                    style: TextStyle(
+                                        fontSize: 12.0,
+                                        color: Colors.grey[600]),
+                                  ),
+                          ),
                         )
                       : SizedBox(
                           width: 1,
